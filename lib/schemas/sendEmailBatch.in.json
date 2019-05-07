@@ -1,0 +1,105 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "items": {
+                "properties": {
+                    "Attachments": {
+                        "items": {
+                            "description": "An attachment for an email message.",
+                            "properties": {
+                                "Content": {
+                                    "type": "string"
+                                },
+                                "ContentID": {
+                                    "type": "string"
+                                },
+                                "ContentType": {
+                                    "type": "string"
+                                },
+                                "Name": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "Bcc": {
+                        "description": "Bcc recipient email address. Multiple addresses are comma seperated. Max 50.",
+                        "type": "string"
+                    },
+                    "Cc": {
+                        "description": "Recipient email address. Multiple addresses are comma seperated. Max 50.",
+                        "type": "string"
+                    },
+                    "From": {
+                        "description": "The sender email address. Must have a registered and confirmed Sender Signature.",
+                        "type": "string"
+                    },
+                    "Headers": {
+                        "items": {
+                            "description": "A single header for an email message.",
+                            "properties": {
+                                "Name": {
+                                    "description": "The header's name.",
+                                    "type": "string"
+                                },
+                                "Value": {
+                                    "description": "The header's value.",
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "HtmlBody": {
+                        "description": "If no TextBody specified HTML email message",
+                        "type": "string"
+                    },
+                    "ReplyTo": {
+                        "description": "Reply To override email address. Defaults to the Reply To set in the sender signature.",
+                        "type": "string"
+                    },
+                    "Subject": {
+                        "description": "Email Subject",
+                        "type": "string"
+                    },
+                    "Tag": {
+                        "description": "Email tag that allows you to categorize outgoing emails and get detailed statistics.",
+                        "type": "string"
+                    },
+                    "TextBody": {
+                        "description": "If no HtmlBody specified Plain text email message",
+                        "type": "string"
+                    },
+                    "To": {
+                        "description": "Recipient email address. Multiple addresses are comma seperated. Max 50.",
+                        "type": "string"
+                    },
+                    "TrackLinks": {
+                        "description": "Replace links in content to enable \"click tracking\" stats. Default is 'null', which uses the server's LinkTracking setting'.",
+                        "enum": [
+                            "None",
+                            "HtmlAndText",
+                            "HtmlOnly",
+                            "TextOnly"
+                        ],
+                        "type": "string"
+                    },
+                    "TrackOpens": {
+                        "description": "Activate open tracking for this email.",
+                        "type": "boolean"
+                    }
+                },
+                "type": "object"
+            },
+            "type": "array"
+        },
+        "X_Postmark_Server_Token": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

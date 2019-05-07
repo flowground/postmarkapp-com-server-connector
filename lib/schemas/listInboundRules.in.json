@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "properties": {
+        "count": {
+            "required": true,
+            "type": "integer"
+        },
+        "offset": {
+            "required": true,
+            "type": "integer"
+        },
+        "X_Postmark_Server_Token": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

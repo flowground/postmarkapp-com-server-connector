@@ -1,0 +1,26 @@
+{
+    "type": "object",
+    "properties": {
+        "messageid": {
+            "required": true,
+            "type": "string"
+        },
+        "count": {
+            "required": true,
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 500,
+            "default": 1
+        },
+        "offset": {
+            "required": true,
+            "type": "integer",
+            "minimum": 0,
+            "default": 0
+        },
+        "X_Postmark_Server_Token": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

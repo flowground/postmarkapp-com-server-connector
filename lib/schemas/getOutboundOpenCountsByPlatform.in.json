@@ -1,0 +1,20 @@
+{
+    "type": "object",
+    "properties": {
+        "tag": {
+            "type": "string"
+        },
+        "fromdate": {
+            "type": "string",
+            "format": "date"
+        },
+        "todate": {
+            "type": "string",
+            "format": "date"
+        },
+        "X_Postmark_Server_Token": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

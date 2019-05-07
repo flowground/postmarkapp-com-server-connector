@@ -1,0 +1,66 @@
+{
+    "type": "object",
+    "properties": {
+        "count": {
+            "required": true,
+            "type": "integer",
+            "maximum": 500
+        },
+        "offset": {
+            "required": true,
+            "type": "integer"
+        },
+        "type": {
+            "type": "string",
+            "enum": [
+                "HardBounce",
+                "Transient",
+                "Unsubscribe",
+                "Subscribe",
+                "AutoResponder",
+                "AddressChange",
+                "DnsError",
+                "SpamNotification",
+                "OpenRelayTest",
+                "Unknown",
+                "SoftBounce",
+                "VirusNotification",
+                "MailFrontier Matador.",
+                "BadEmailAddress",
+                "SpamComplaint",
+                "ManuallyDeactivated",
+                "Unconfirmed",
+                "Blocked",
+                "SMTPApiError",
+                "InboundError",
+                "DMARCPolicy",
+                "TemplateRenderingFailed"
+            ]
+        },
+        "inactive": {
+            "type": "boolean"
+        },
+        "emailFilter": {
+            "type": "string",
+            "format": "email"
+        },
+        "messageID": {
+            "type": "string"
+        },
+        "tag": {
+            "type": "string"
+        },
+        "todate": {
+            "type": "string",
+            "format": "date"
+        },
+        "fromdate": {
+            "type": "string",
+            "format": "date"
+        },
+        "X_Postmark_Server_Token": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

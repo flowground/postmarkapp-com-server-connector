@@ -1,0 +1,65 @@
+{
+    "type": "object",
+    "properties": {
+        "count": {
+            "required": true,
+            "type": "integer"
+        },
+        "offset": {
+            "required": true,
+            "type": "integer"
+        },
+        "recipient": {
+            "required": false,
+            "type": "string"
+        },
+        "tag": {
+            "required": false,
+            "type": "string"
+        },
+        "client_name": {
+            "required": false,
+            "type": "string"
+        },
+        "client_company": {
+            "required": false,
+            "type": "string"
+        },
+        "client_family": {
+            "required": false,
+            "type": "string"
+        },
+        "os_name": {
+            "required": false,
+            "type": "string"
+        },
+        "os_family": {
+            "required": false,
+            "type": "string"
+        },
+        "os_company": {
+            "required": false,
+            "type": "string"
+        },
+        "platform": {
+            "required": false,
+            "type": "string"
+        },
+        "country": {
+            "required": false,
+            "type": "string"
+        },
+        "region": {
+            "required": false,
+            "type": "string"
+        },
+        "city": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Postmark_Server_Token": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

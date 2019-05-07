@@ -1,0 +1,52 @@
+{
+    "type": "object",
+    "properties": {
+        "count": {
+            "required": true,
+            "type": "integer"
+        },
+        "offset": {
+            "required": true,
+            "type": "integer"
+        },
+        "recipient": {
+            "type": "string",
+            "format": "email"
+        },
+        "fromemail": {
+            "type": "string",
+            "format": "email"
+        },
+        "subject": {
+            "type": "string"
+        },
+        "mailboxhash": {
+            "type": "string"
+        },
+        "tag": {
+            "type": "string"
+        },
+        "status": {
+            "type": "string",
+            "enum": [
+                "blocked",
+                "processed",
+                "queued",
+                "failed",
+                "scheduled"
+            ]
+        },
+        "todate": {
+            "type": "string",
+            "format": "date"
+        },
+        "fromdate": {
+            "type": "string",
+            "format": "date"
+        },
+        "X_Postmark_Server_Token": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

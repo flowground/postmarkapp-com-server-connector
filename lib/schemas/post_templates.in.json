@@ -1,0 +1,39 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "description": "The contents required for creating a new template.",
+            "properties": {
+                "Alias": {
+                    "description": "The optional string identifier for referring to this Template (numbers, letters, and '.', '-', '_' characters, starts with a letter).",
+                    "type": "string"
+                },
+                "HtmlBody": {
+                    "description": "The HTML template definition for this Template.",
+                    "type": "string"
+                },
+                "Name": {
+                    "description": "The friendly display name for the template.",
+                    "type": "string"
+                },
+                "Subject": {
+                    "description": "The Subject template definition for this Template.",
+                    "type": "string"
+                },
+                "TextBody": {
+                    "description": "The Text template definition for this Template.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Subject"
+            ],
+            "type": "object"
+        },
+        "X_Postmark_Server_Token": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

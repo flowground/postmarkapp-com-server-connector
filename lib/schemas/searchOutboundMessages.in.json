@@ -1,0 +1,43 @@
+{
+    "type": "object",
+    "properties": {
+        "count": {
+            "required": true,
+            "type": "integer"
+        },
+        "offset": {
+            "required": true,
+            "type": "integer"
+        },
+        "recipient": {
+            "type": "string",
+            "format": "email"
+        },
+        "fromemail": {
+            "type": "string",
+            "format": "email"
+        },
+        "tag": {
+            "type": "string"
+        },
+        "status": {
+            "type": "string",
+            "enum": [
+                "queued",
+                "sent"
+            ]
+        },
+        "todate": {
+            "type": "string",
+            "format": "date"
+        },
+        "fromdate": {
+            "type": "string",
+            "format": "date"
+        },
+        "X_Postmark_Server_Token": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

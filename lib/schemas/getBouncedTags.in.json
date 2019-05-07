@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "X_Postmark_Server_Token": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

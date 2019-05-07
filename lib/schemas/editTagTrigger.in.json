@@ -1,0 +1,25 @@
+{
+    "type": "object",
+    "properties": {
+        "triggerid": {
+            "required": true,
+            "type": "integer"
+        },
+        "requestBody": {
+            "description": "",
+            "properties": {
+                "MatchName": {
+                    "type": "string"
+                },
+                "TrackOpens": {
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        },
+        "X_Postmark_Server_Token": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

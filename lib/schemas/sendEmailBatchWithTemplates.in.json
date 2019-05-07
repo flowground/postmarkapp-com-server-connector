@@ -1,0 +1,118 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "Messages": {
+                    "items": {
+                        "properties": {
+                            "Attachments": {
+                                "items": {
+                                    "description": "An attachment for an email message.",
+                                    "properties": {
+                                        "Content": {
+                                            "type": "string"
+                                        },
+                                        "ContentID": {
+                                            "type": "string"
+                                        },
+                                        "ContentType": {
+                                            "type": "string"
+                                        },
+                                        "Name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "Bcc": {
+                                "format": "email",
+                                "type": "string"
+                            },
+                            "Cc": {
+                                "format": "email",
+                                "type": "string"
+                            },
+                            "From": {
+                                "format": "email",
+                                "type": "string"
+                            },
+                            "Headers": {
+                                "items": {
+                                    "description": "A single header for an email message.",
+                                    "properties": {
+                                        "Name": {
+                                            "description": "The header's name.",
+                                            "type": "string"
+                                        },
+                                        "Value": {
+                                            "description": "The header's value.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "InlineCss": {
+                                "default": true,
+                                "type": "boolean"
+                            },
+                            "ReplyTo": {
+                                "type": "string"
+                            },
+                            "Tag": {
+                                "type": "string"
+                            },
+                            "TemplateAlias": {
+                                "description": "Required if 'TemplateId' is not specified.",
+                                "type": "string"
+                            },
+                            "TemplateId": {
+                                "description": "Required if 'TemplateAlias' is not specified.",
+                                "type": "integer"
+                            },
+                            "TemplateModel": {
+                                "type": "object"
+                            },
+                            "To": {
+                                "format": "email",
+                                "type": "string"
+                            },
+                            "TrackLinks": {
+                                "description": "Replace links in content to enable \"click tracking\" stats. Default is 'null', which uses the server's LinkTracking setting'.",
+                                "enum": [
+                                    "None",
+                                    "HtmlAndText",
+                                    "HtmlOnly",
+                                    "TextOnly"
+                                ],
+                                "type": "string"
+                            },
+                            "TrackOpens": {
+                                "description": "Activate open tracking for this email.",
+                                "type": "boolean"
+                            }
+                        },
+                        "required": [
+                            "TemplateId",
+                            "TemplateAlias",
+                            "TemplateModel",
+                            "To",
+                            "From"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        },
+        "X_Postmark_Server_Token": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

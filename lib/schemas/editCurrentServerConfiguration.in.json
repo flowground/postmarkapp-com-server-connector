@@ -1,0 +1,72 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "BounceHookUrl": {
+                    "type": "string"
+                },
+                "ClickHookUrl": {
+                    "description": "Webhook url allowing real-time notification when tracked links are clicked.",
+                    "type": "string"
+                },
+                "Color": {
+                    "enum": [
+                        "purple",
+                        "blue",
+                        "turqoise",
+                        "green",
+                        "red",
+                        "yellow",
+                        "grey"
+                    ],
+                    "type": "string"
+                },
+                "DeliveryHookUrl": {
+                    "type": "string"
+                },
+                "InboundDomain": {
+                    "type": "string"
+                },
+                "InboundHookUrl": {
+                    "type": "string"
+                },
+                "InboundSpamThreshold": {
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "OpenHookUrl": {
+                    "type": "string"
+                },
+                "PostFirstOpenOnly": {
+                    "type": "boolean"
+                },
+                "RawEmailEnabled": {
+                    "type": "boolean"
+                },
+                "SmtpApiActivated": {
+                    "type": "boolean"
+                },
+                "TrackLinks": {
+                    "enum": [
+                        "None",
+                        "HtmlAndText",
+                        "HtmlOnly",
+                        "TextOnly"
+                    ],
+                    "type": "string"
+                },
+                "TrackOpens": {
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        },
+        "X_Postmark_Server_Token": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

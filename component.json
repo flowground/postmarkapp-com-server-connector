@@ -1,0 +1,818 @@
+{
+    "title": "Postmark",
+    "description": "Postmark makes sending and receiving email\nincredibly easy.\n",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/postmarkapp.com/server/1.0.0/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.postmarkapp.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "getBounces": {
+            "main": "./lib/actions/getBounces.js",
+            "title": "Get bounces",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getBounces.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getBouncedTags": {
+            "main": "./lib/actions/getBouncedTags.js",
+            "title": "Get bounced tags",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getBouncedTags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getSingleBounce": {
+            "main": "./lib/actions/getSingleBounce.js",
+            "title": "Get a single bounce",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSingleBounce.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "activateBounce": {
+            "main": "./lib/actions/activateBounce.js",
+            "title": "Activate a bounce",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/activateBounce.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_bounces__bounceid__dump": {
+            "main": "./lib/actions/get_bounces__bounceid__dump.js",
+            "title": "Get bounce dump",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_bounces__bounceid__dump.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getDeliveryStats": {
+            "main": "./lib/actions/getDeliveryStats.js",
+            "title": "Get delivery stats",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getDeliveryStats.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "sendEmail": {
+            "main": "./lib/actions/sendEmail.js",
+            "title": "Send a single email",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/sendEmail.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "sendEmailBatch": {
+            "main": "./lib/actions/sendEmailBatch.js",
+            "title": "Send a batch of emails",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/sendEmailBatch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "sendEmailBatchWithTemplates": {
+            "main": "./lib/actions/sendEmailBatchWithTemplates.js",
+            "title": "Send a batch of email using templates.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/sendEmailBatchWithTemplates.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "sendEmailWithTemplate": {
+            "main": "./lib/actions/sendEmailWithTemplate.js",
+            "title": "Send an email using a Template",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/sendEmailWithTemplate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "searchInboundMessages": {
+            "main": "./lib/actions/searchInboundMessages.js",
+            "title": "Inbound message search",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/searchInboundMessages.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "bypassRulesForInboundMessage": {
+            "main": "./lib/actions/bypassRulesForInboundMessage.js",
+            "title": "Bypass rules for a blocked inbound message",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/bypassRulesForInboundMessage.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getInboundMessageDetails": {
+            "main": "./lib/actions/getInboundMessageDetails.js",
+            "title": "Inbound message details",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getInboundMessageDetails.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "retryInboundMessageProcessing": {
+            "main": "./lib/actions/retryInboundMessageProcessing.js",
+            "title": "Retry a failed inbound message for processing",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/retryInboundMessageProcessing.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "searchOutboundMessages": {
+            "main": "./lib/actions/searchOutboundMessages.js",
+            "title": "Outbound message search",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/searchOutboundMessages.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "searchClicksForOutboundMessages": {
+            "main": "./lib/actions/searchClicksForOutboundMessages.js",
+            "title": "Clicks for a all messages",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/searchClicksForOutboundMessages.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getClicksForSingleOutboundMessage": {
+            "main": "./lib/actions/getClicksForSingleOutboundMessage.js",
+            "title": "Retrieve Message Clicks",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getClicksForSingleOutboundMessage.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "searchOpensForOutboundMessages": {
+            "main": "./lib/actions/searchOpensForOutboundMessages.js",
+            "title": "Opens for all messages",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/searchOpensForOutboundMessages.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getOpensForSingleOutboundMessage": {
+            "main": "./lib/actions/getOpensForSingleOutboundMessage.js",
+            "title": "Retrieve Message Opens",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getOpensForSingleOutboundMessage.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getOutboundMessageDetails": {
+            "main": "./lib/actions/getOutboundMessageDetails.js",
+            "title": "Outbound message details",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getOutboundMessageDetails.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getOutboundMessageDump": {
+            "main": "./lib/actions/getOutboundMessageDump.js",
+            "title": "Outbound message dump",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getOutboundMessageDump.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getCurrentServerConfiguration": {
+            "main": "./lib/actions/getCurrentServerConfiguration.js",
+            "title": "Get Server Configuration",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getCurrentServerConfiguration.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "editCurrentServerConfiguration": {
+            "main": "./lib/actions/editCurrentServerConfiguration.js",
+            "title": "Edit Server Configuration",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/editCurrentServerConfiguration.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getOutboundOverviewStatistics": {
+            "main": "./lib/actions/getOutboundOverviewStatistics.js",
+            "title": "Get outbound overview",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getOutboundOverviewStatistics.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getBounceCounts": {
+            "main": "./lib/actions/getBounceCounts.js",
+            "title": "Get bounce counts",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getBounceCounts.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getOutboundClickCounts": {
+            "main": "./lib/actions/getOutboundClickCounts.js",
+            "title": "Get click counts",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getOutboundClickCounts.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getOutboundClickCountsByBrowserFamily": {
+            "main": "./lib/actions/getOutboundClickCountsByBrowserFamily.js",
+            "title": "Get browser usage by family",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getOutboundClickCountsByBrowserFamily.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getOutboundClickCountsByLocation": {
+            "main": "./lib/actions/getOutboundClickCountsByLocation.js",
+            "title": "Get clicks by body location",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getOutboundClickCountsByLocation.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getOutboundClickCountsByPlatform": {
+            "main": "./lib/actions/getOutboundClickCountsByPlatform.js",
+            "title": "Get browser plaform usage",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getOutboundClickCountsByPlatform.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getOutboundOpenCounts": {
+            "main": "./lib/actions/getOutboundOpenCounts.js",
+            "title": "Get email open counts",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getOutboundOpenCounts.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getOutboundOpenCountsByEmailClient": {
+            "main": "./lib/actions/getOutboundOpenCountsByEmailClient.js",
+            "title": "Get email client usage",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getOutboundOpenCountsByEmailClient.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getOutboundOpenCountsByPlatform": {
+            "main": "./lib/actions/getOutboundOpenCountsByPlatform.js",
+            "title": "Get email platform usage",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getOutboundOpenCountsByPlatform.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getSentCounts": {
+            "main": "./lib/actions/getSentCounts.js",
+            "title": "Get sent counts",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSentCounts.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getSpamComplaints": {
+            "main": "./lib/actions/getSpamComplaints.js",
+            "title": "Get spam complaints",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSpamComplaints.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getTrackedEmailCounts": {
+            "main": "./lib/actions/getTrackedEmailCounts.js",
+            "title": "Get tracked email counts",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getTrackedEmailCounts.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listTemplates": {
+            "main": "./lib/actions/listTemplates.js",
+            "title": "Get the Templates associated with this Server",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listTemplates.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_templates": {
+            "main": "./lib/actions/post_templates.js",
+            "title": "Create a Template",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_templates.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "testTemplateContent": {
+            "main": "./lib/actions/testTemplateContent.js",
+            "title": "Test Template Content",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/testTemplateContent.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deleteTemplate": {
+            "main": "./lib/actions/deleteTemplate.js",
+            "title": "Delete a Template",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteTemplate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getSingleTemplate": {
+            "main": "./lib/actions/getSingleTemplate.js",
+            "title": "Get a Template",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSingleTemplate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateTemplate": {
+            "main": "./lib/actions/updateTemplate.js",
+            "title": "Update a Template",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateTemplate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listInboundRules": {
+            "main": "./lib/actions/listInboundRules.js",
+            "title": "List inbound rule triggers",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listInboundRules.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "createInboundRule": {
+            "main": "./lib/actions/createInboundRule.js",
+            "title": "Create an inbound rule trigger",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/createInboundRule.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deleteInboundRule": {
+            "main": "./lib/actions/deleteInboundRule.js",
+            "title": "Delete a single trigger",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteInboundRule.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "searcgTagTriggers": {
+            "main": "./lib/actions/searcgTagTriggers.js",
+            "title": "Search triggers",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/searcgTagTriggers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "createTagTrigger": {
+            "main": "./lib/actions/createTagTrigger.js",
+            "title": "Create a trigger for a tag",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/createTagTrigger.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deleteTagTrigger": {
+            "main": "./lib/actions/deleteTagTrigger.js",
+            "title": "Delete a single trigger",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteTagTrigger.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getSingleTagTrigger": {
+            "main": "./lib/actions/getSingleTagTrigger.js",
+            "title": "Get a single trigger",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSingleTagTrigger.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "editTagTrigger": {
+            "main": "./lib/actions/editTagTrigger.js",
+            "title": "Edit a single trigger",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/editTagTrigger.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

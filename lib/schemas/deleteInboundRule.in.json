@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "triggerid": {
+            "required": true,
+            "type": "integer"
+        },
+        "X_Postmark_Server_Token": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

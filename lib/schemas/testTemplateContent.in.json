@@ -1,0 +1,35 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "HtmlBody": {
+                    "description": "The html body content to validate. Must be specified if Subject or\nTextBody are not. See our template language documentation for more\ninformation on the syntax for this field.\n",
+                    "type": "string"
+                },
+                "InlineCssForHtmlTestRender": {
+                    "default": true,
+                    "description": "When HtmlBody is specified, the test render will have style blocks\ninlined as style attributes on matching html elements. You may disable\nthe css inlining behavior by passing false for this parameter.\n",
+                    "type": "boolean"
+                },
+                "Subject": {
+                    "description": "The subject content to validate. Must be specified if HtmlBody or\nTextBody are not. See our template language documentation for more\ninformation on the syntax for this field.\n",
+                    "type": "string"
+                },
+                "TestRenderModel": {
+                    "description": "The model to be used when rendering test content.",
+                    "type": "object"
+                },
+                "TextBody": {
+                    "description": "The text body content to validate. Must be specified if HtmlBody or\nSubject are not. See our template language documentation for more\ninformation on the syntax for this field.\n",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "X_Postmark_Server_Token": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

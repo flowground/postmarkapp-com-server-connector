@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "templateIdOrAlias": {
+            "required": true,
+            "type": "string"
+        },
+        "X_Postmark_Server_Token": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}
